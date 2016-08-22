@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>3D Campus Navigator</title>
+
+  <link rel="stylesheet" href="//js.arcgis.com/4.0/esri/css/main.css">
+
+  <!-- <link rel="stylesheet" href="app/widget/floorpicker/floorpicker.css">
+  <link rel="stylesheet" href="app/widget/campussearch/campussearch.css">
+  <link rel="stylesheet" href="app/widget/route/route.css">
+  <link rel="stylesheet" href="app/widget/sidepanel/side-panel.css"> -->
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <style>
+ html,
+    body,
+    #map {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+    </style>
+
+    <script type="text/javascript">
+
+        var pathRegex = new RegExp(/\/[^\/]+$/);
+        var locationPath = location.pathname.replace(pathRegex, '');
+        if (locationPath.slice(-1) !== '/') { locationPath += '/'; }
+
+        // set dojoConfig variable before loading dojo.js
+        var dojoConfig = {
+              parseOnLoad: true,
+              isDebug: true,
+              async: true,
+              //baseUrl: './',
+              packages: [
+                    { name: 'js', location: locationPath + 'js'},
+                    { name: 'floorpicker', location: locationPath + 'widgets/floorpicker'},
+                    { name: 'campussearch', location: locationPath + 'widgets/campussearch'},
+                    { name: 'info', location: locationPath + 'widgets/info'},
+                    { name: 'route', location: locationPath + 'widgets/route'},
+                    { name: 'crosspanel', location: locationPath  + 'widgets/crosspanel'},
+                    { name: 'config', location: locationPath  + 'config'},
+                    { name: 'sidepanel', location: locationPath  + 'widgets/sidepanel'}
+                ]
+          };
+
+    </script>
+
+    <!-- Load dojo.js -->
+    <script src="//js.arcgis.com/4.0/"></script>
+
+    <!-- Application Entry Point -->
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+  <div class="loading-message" id="loading_message">Calculating Route...please wait...</div>
+  <div id="routeInfoDiv" class="routeInfo"></div>
+
+  <!-- <div id="searchWrapperDiv"></div> -->
+
+  <!-- TODO LOADING SCREEN -->
+  <!-- <div id="loadingOuter" class="loading-outer splash-loading">
+    <div id="loading-inner" class="loading-inner">
+      <div id="loadingWrapper" class="loading-wrapper">
+        <div id="loginContainer" class="login-container"></div>
+      </div>
+      <h3 id="loadingMessage" class="loading-message">loading goodies...</h3>
+    </div>
+    <h1 id="loadingAppTitle" class="loading-app-title">3D Campus Navigator</h1>
+  </div> -->
+
+  <!-- CONTENT -->
+  <div class="container-full">
+
+    <!-- HEADER -->
+    <div class="row app-header">
+      <div class="col-xs-12">
+        <div id="appHeaderContainer">
+          <img src="images/logo65-whiteontrans.png" class="header__image">
+          <h1 class="header__title">Esri Campus Viewer</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="row app-center">
+
+      <!-- LEFT COLUMN -->
+      <div class="col-left js-left-panel-move">
+        <div id="left-panel"></div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+
+      <!-- MAP COLUMN -->
+      <div class="col-map js-left-panel-move">
+
+        <!-- attach point for the map, don't rename -->
+        <div id="map">
+
+          <!-- loading indicator -->
+          <div id="mapLoadingIndicator" class="esrips-progress-bar shine esrips-progress-bar-color stripes"><span></span></div>
+
+          <!-- top left -->
+          <div class="map-overlay-top-left js-left-panel-move">
+            <div id="search"></div>
+            <div id="info-btn-tab"></div>
+            <div id="floor-picker"></div>
+            <!-- <div class="wrapper"><div id="homeButtonContainer"></div></div>
+            <div class="wrapper"><div id="drawContainer"></div></div>
+            <div class="wrapper"><div id="driveTimesContainer"></div></div>
+            <div id="placemarks"></div> -->
+          </div>
+
+          <!-- top right -->
+          <div class="map-overlay-top-right">
+            <!-- <div id="layers"></div>
+            <div class="wrapper"><div id="legendContainer"></div></div>
+            <div class="wrapper"><div id="basemapGalleryContainer" style="float: left;"></div></div> -->
+          </div>
+
+          <!-- center -->
+          <div class="map-overlay-center">
+            <!-- <div id="mapLoadingIndicator2" class="spinner">
+              <div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>
+            </div> -->
+          </div>
+
+          <!-- bottom left -->
+          <div class="map-overlay-bottom-left js-left-panel-move">
+            <div id="layer-slides" class="layer-slides"></div>
+          </div>
+
+          <!-- bottom right -->
+          <div class="map-overlay-bottom-right">
+            <!-- <div class="wrapper"><div id="templatePickerContainer"></div></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+
+  </div>
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+
+</body>
+
+</html>

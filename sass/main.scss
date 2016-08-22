@@ -1,0 +1,37 @@
+// Bootstrap
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+@import 'bootstrap/bootstrap';
+
+// FontAwesome
+$fa-font-path: "../../bower_components/fontawesome/fonts";
+@import '../../bower_components/fontawesome/scss/font-awesome';
+
+// Application
+@import 'variables';
+// @import 'splash';
+@import 'animations';
+@import 'app';
+@import 'page';
+// @import 'InfoWindows';
+// @import 'fonts';
+// @import 'CustomTabs';
+
+// Core
+@import 'core';
+
+// Widgets
+@import '../widgets/campussearch/CampusSearch';
+@import '../widgets/info/Info';
+@import '../widgets/floorpicker/FloorPicker';
+@import '../widgets/route/Route';
+@import '../widgets/crosspanel/CrossPanel';
+@import '../widgets/sidepanel/SidePanel';
+// @import '../../libs/widget/UnifiedSearch/UnifiedSearch';
+// @import '../../libs/widget/Coordinates/Coordinates';
+// @import '../../libs/widget/Legend/Legend';
+
+// Temporarily include "_legacy.scss" which is a copy of the existing "main.css"
+// @import 'legacy';
+
+// Components
+// TODO: Import modularized component styles here (i.e. _infoWindows.scss)

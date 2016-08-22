@@ -1,0 +1,121 @@
+/* FLOOR PICKER */
+
+.fp-btn {
+    cursor: pointer;
+    background-color: #ffffff;
+    width: 2.5em;
+    text-align: center;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+    border-radius: 0;
+    user-select: none;
+}
+
+.fp-btn:hover {
+    background-color: #eeeeee;
+    border-radius: 0;
+}
+
+.fp-btn:active {
+    background-color: #dddddd;
+}
+
+.fp-btn.disabled  {
+    cursor: default;
+    background-color: #eeeeee;
+    border-color: #dddddd;
+    color: #999999;
+}
+
+.fp-wrapper {
+}
+
+#floor-picker {
+    position: relative;
+    left: -35px;
+    top: 170px;
+}
+
+#floorPicker {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+#floorPicker .floors-div {
+    width: 33px;
+    box-sizing: border-box;
+    background: $white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color: #6e6e6e
+}
+
+.floors-div {
+    .btn {
+        display: block;
+        padding: 6px 0;
+        border-radius: 0;
+
+        &:hover {
+            background-color: #f2f2f2;
+            color: #000;
+        }
+
+        &.is-selected {
+            background-color: $light-blue;
+            color: $white;
+        }
+    }
+}
+
+.fp-header {
+    padding: 10px;
+    background: #fff;
+    border-bottom: 1px solid rgba(50,50,50,0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color: #6e6e6e;
+    text-align: center;
+}
+
+#floorPicker.set-height {
+    height: 13.4em; /* 2em for each floor, 1.7em for two scroll buttons */
+}
+
+#floorPicker.set-height .floors-div {
+    height: 10em;
+    overflow: hidden;
+}
+
+#floorPicker.set-height .floors-div .btn {
+    border-top: none;
+}
+
+#floorPicker .scroll-btn {
+    height: 1.7em;
+    line-height: 1.6em;
+}
+
+.vertical .btn:not(:first-of-type) {
+    border-top: none;
+}
+
+
+@media all and (max-width: 400px) and (min-height: 525px + 1) {
+    #floorPicker {
+        top: 150px;
+        left: 10px;
+    }
+}
+
+/* if short, put mobile floorpicker back in the bottom left */
+@media all and (max-height: 525px),
+all and (max-width: 500px) {
+    #floorPicker {
+        bottom: 50px;
+        top: auto;
+        right: 10px;
+        left: auto;
+    }
+    .small-logo #floorPicker {
+        bottom: 30px;
+    }
+}

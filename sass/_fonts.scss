@@ -1,0 +1,40 @@
+//@font-face {
+//  [font-family: <family-name>;]? //The name that will be used in your stylesheets to reference this font
+//  [src: [ <uri> [format(<string>#)]? | <font-face-name> ]#;]? //Specify resource to be used for the font, can reference the user's local font or a url
+//  [font-weight: <weight>]; //Weight of the font being referenced
+//  [font-style: <style>]; //The style of the associated font ie. Italic, Normal
+//}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/open-sans/opensans-regular.woff) format('woff'),
+    url(../fonts/open-sans/opensans-regular.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../fonts/open-sans/opensans-bold.woff) format('woff'),
+    url(../fonts/open-sans/opensans-bold.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/open-sans/opensans-italic.woff) format('woff'),
+    url(../fonts/open-sans/opensans-italic.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/open-sans/opensans-light.woff) format('woff'),
+    url(../fonts/open-sans/opensans-light.ttf) format('opentype');
+}
+
+@import './font-stateface.css';

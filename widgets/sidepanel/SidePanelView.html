@@ -1,0 +1,175 @@
+<div class="side-panel">
+
+    <!-- Close Panel Button -->
+    <div class="sp-close js-left-panel-close">
+        <i class="fa fa-times sp-close-icon"></i>
+    </div>
+
+    <!-- Initial Info Card -->
+    <div class="sp-info js-card-info is-hidden">
+        <h1 class="sp-info__title">
+            Welcome!
+        </h1>
+        <p class="sp-info__desc">
+            This can possibly be some descriptive information about the buildings function and/or the departments it houses.
+        </p>
+    </div>
+
+    <!-- General Building Info Card -->
+    <div class="sp-info js-card-building is-hidden">
+        <h1 class="sp-info__title">
+            <i class="fa fa-building-o"></i>
+            Building X
+        </h1>
+        <p class="sp-info__desc">
+            This can possibly be some descriptive information about the buildings function and/or the departments it houses.
+        </p>
+        <button type="button" class="btn btn-primary sp-btn">
+            <i class="fa fa-location-arrow"></i>
+            Route
+        </button>
+        <button type="button" class="btn btn-primary sp-btn">
+            <i class="fa fa-sign-in"></i>
+            Look Inside
+        </button>
+    </div>
+
+    <!-- Route Card -->
+    <div  data-dojo-attach-point="routeCardNode" class="sp-info js-card-route is-hidden">
+        <h1 class="sp-info__title">
+            <i class="fa fa-location-arrow"></i>
+            Route
+        </h1>
+
+
+        <div class="sp-route__search-wrap">
+            <span class="sp-route__search-icon">
+                <i class="fa fa-dot-circle-o"></i>
+            </span>
+            <span id="fromSearch" data-dojo-attach-point="route_FromNameNode"></span>
+        </div>
+
+        <div class="sp-swap-btn">
+            <i class="fa fa-refresh"></i>
+        </div>
+
+        <div class="sp-route__search-wrap sp-route__search-wrap--to">
+            <span class="sp-route__search-icon sp-route__search-icon--to">
+                <i class="fa fa-map-marker"></i>
+            </span>
+            <div id="toSearch" data-dojo-attach-point="route_ToNameNode"></div>
+        </div>
+
+        <div class="spinner-wave js-route-loading is-hidden">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <button type="button" class="btn btn-primary sp-btn sp-btn--route is-hidden js-route-toggle">
+            Need an Elevator?
+        </button>
+
+        <div class="sp-route__measure-wrap js-route-measures is-hidden">
+            <div class="sp-route__measure-group">
+                <span class="sp-route__measure-title">Time</span>
+                <span class="sp-route__measure-item" data-dojo-attach-point="route_Time"></span>
+            </div>
+
+            <div class="sp-route__measure-group">
+                <span class="sp-route__measure-title">Distance</span>
+                <span class="sp-route__measure-item"  data-dojo-attach-point="route_Distance"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Office Card -->
+    <div data-dojo-attach-point="officeCardNode" class="sp-info js-card-office is-hidden">
+        <h4 class="sp-info__subtitle" data-dojo-attach-point="office_SpaceTypeNode">
+            <i class="fa fa-laptop"></i>
+        </h4>
+        <h2 class="sp-info__office" data-dojo-attach-point="office_LongNameNode"></h2>
+        <h1 data-dojo-attach-point="office_EmployeeNameNode"></h1>
+        <a class="sp-info__desc" href="#" data-dojo-attach-point="office_EmailNode"></a>
+        <p class="sp-info__desc" data-dojo-attach-point="office_ExtensionNode"></p>
+
+        <button type="button" class="btn btn-primary sp-btn" data-dojo-attach-point='office_routeBtn' data-dojo-attach-event='onclick: _office_RouteBtnClick'>
+            <i class="fa fa-location-arrow"></i>
+            Route
+        </button>
+        <!-- <button type="button" class="btn btn-primary sp-btn" data-dojo-attach-point='office_myOfficeBtn' data-dojo-attach-event='onclick: _onMyOfficeBtnClick'>
+            <i class="fa fa-star-o"></i>
+            My Office
+        </button> -->
+    </div>
+
+    <!-- POI Accordion Card -->
+    <div class="sp-poi js-card-poi is-hidden" data-dojo-attach-point='poiCardNode'>
+
+
+       <!--  <div class="panel sp-poi__panel">
+            <div role="tab" id="headingTwo">
+                <a class="sp-poi__collapse-btn collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="sp-poi__head">
+                        <h1 class="sp-info__title sp-info__title--poi">
+                            <i class="fa fa-cutlery"></i>
+                            POI
+                        </h1>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="sp-poi__content">
+                    <p class="sp-info__desc">
+                        This can possibly be some descriptive information about the buildings function and/or the departments it houses.
+                    </p>
+                    <p>
+                        <a href="#">
+                            a link to something
+                        </a>
+                    </p>
+                    <button type="button" class="btn btn-primary sp-btn">
+                        <i class="fa fa-location-arrow"></i>
+                        Route
+                    </button>
+                </div>
+            </div>
+        </div>
+ -->
+        <div class="panel sp-poi__panel">
+            <div role="tab" id="headingThree">
+                <a class="sp-poi__collapse-btn collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <div class="sp-poi__head">
+                        <h1 class="sp-info__title sp-info__title--poi">
+                            <i class="fa fa-cutlery"></i>
+                            POI
+                        </h1>
+                    </div>
+                </a>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="sp-poi__content">
+                    <p class="sp-info__desc">
+                        This can possibly be some descriptive information about the buildings function and/or the departments it houses.
+                    </p>
+                    <p>
+                        <a href="#">
+                            a link to something
+                        </a>
+                    </p>
+                    <button type="button" class="btn btn-primary sp-btn">
+                        <i class="fa fa-location-arrow"></i>
+                        Route
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
